@@ -9,60 +9,71 @@
 
   <title>Ge'ez Bio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    html, body {
       margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
       background-color: #f9f9f9;
       color: #333;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
+
     header, footer {
       background-color: #004d40;
       color: white;
       padding: 20px;
       text-align: center;
     }
+
+    header img {
+      max-height: 100px;
+      margin-bottom: 0;
+    }
+
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      flex-wrap: nowrap !important;  /* Prevent wrapping on mobile and desktop */
       gap: 10px;
       margin-top: 10px;
-      overflow-x: auto; /* allow horizontal scroll if needed */
-      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+      padding: 0 15px;
     }
+
     nav a {
-      white-space: nowrap; /* prevent breaking into multiple lines */
-      flex-shrink: 0;
       color: white;
       padding: 8px 12px;
       text-decoration: none;
       font-weight: bold;
       border-radius: 4px;
       transition: background-color 0.3s ease;
-      font-size: 16px; /* keep same font size on all devices */
+      font-size: 16px;
     }
+
     nav a:hover, nav a:focus {
       background-color: #00796b;
       outline: none;
-      text-decoration: none;
     }
+
     section {
-      padding: 30px 20px;
+      padding: 40px 20px;
       max-width: 900px;
-      margin: 40px auto;
+      margin: 0 auto;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
+
     section.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     h2 {
       color: #00695c;
       margin-bottom: 20px;
     }
+
     .product {
       background-color: #e0f2f1;
       padding: 15px 20px;
@@ -71,11 +82,13 @@
       border-radius: 5px;
       box-shadow: 0 2px 5px rgb(0 0 0 / 0.05);
     }
+
     .product ul {
       margin: 0;
       padding-left: 20px;
       list-style-type: disc;
     }
+
     iframe {
       width: 100%;
       height: 600px;
@@ -83,11 +96,7 @@
       border-radius: 8px;
       box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
     }
-    @media (max-width: 768px) {
-      iframe {
-        height: 900px; /* Adjusted height for better visibility on mobile */
-      }
-    }
+
     details {
       background-color: #e8f5f2;
       border-left: 4px solid #004d40;
@@ -96,47 +105,53 @@
       border-radius: 5px;
       box-shadow: 0 2px 5px rgb(0 0 0 / 0.05);
     }
+
     details summary {
       font-weight: bold;
       cursor: pointer;
-      outline: none;
       font-size: 1.1rem;
       user-select: none;
       padding: 8px 0;
     }
+
     details[open] summary {
       color: #004d40;
     }
 
-    /* Mobile responsive improvements */
+    footer {
+      margin-top: 60px;
+    }
+
     @media (max-width: 768px) {
       nav {
-        gap: 10px;  /* same gap as desktop */
-        padding: 0 10px;
-        flex-wrap: nowrap !important; /* enforce no wrap */
+        flex-direction: row;
+        flex-wrap: wrap;
         overflow-x: auto;
-      }
-      nav a {
-        padding: 8px 12px; /* same as desktop */
-        font-size: 16px;   /* same as desktop */
+        padding: 0 10px;
       }
 
-      /* Keep all other mobile styles intact */
-      section {
-        padding: 20px 15px;
-        margin: 30px auto;
+      nav a {
+        font-size: 14px;
+        padding: 6px 10px;
+        white-space: nowrap;
       }
+
+      section {
+        padding: 30px 15px;
+      }
+
       header img {
         max-height: 70px;
       }
-      iframe {
-        height: 400px;
-      }
+
       .product {
         padding: 12px 15px;
       }
-    }
 
+      iframe {
+        height: 900px;
+      }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -166,7 +181,6 @@
   }
   </script>
 
-  <!-- FAQPage structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -193,12 +207,9 @@
   </script>
 
   <script>
-    // Fade in sections on scroll
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll("section");
-      const options = {
-        threshold: 0.1
-      };
+      const options = { threshold: 0.1 };
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -207,16 +218,15 @@
           }
         });
       }, options);
-      sections.forEach(section => {
-        observer.observe(section);
-      });
+      sections.forEach(section => observer.observe(section));
     });
   </script>
 </head>
+
 <body>
 
 <header>
-  <img src="figure.jpg" alt="Ge'ez Bio" style="max-height: 100px; margin-bottom: 0px;" />
+  <img src="figure.jpg" alt="Ge'ez Bio" />
   <h1>Ge'ez Bio</h1>
   <nav>
     <a href="#home">Home</a>
@@ -240,7 +250,6 @@
 
 <section id="products">
   <h2>Our Products</h2>
-
   <div class="product">
     <h3>1. Alcalase (Protease)</h3>
     <ul>
@@ -249,7 +258,6 @@
       <li><strong>Price:</strong> Starting at $15/kg</li>
     </ul>
   </div>
-
   <div class="product">
     <h3>2. Alpha-Amylase</h3>
     <ul>
@@ -258,7 +266,6 @@
       <li><strong>Price:</strong> Starting at $18/kg</li>
     </ul>
   </div>
-
   <div class="product">
     <h3>3. Azotobacter Biofertilizer</h3>
     <ul>
@@ -266,7 +273,6 @@
       <li><strong>Price:</strong> Starting at $2.50/L</li>
     </ul>
   </div>
-
   <div class="product">
     <h3>4. Bt Biopesticide (Cry1Ac)</h3>
     <ul>
@@ -275,7 +281,6 @@
       <li><strong>Price:</strong> Starting at $25/kg</li>
     </ul>
   </div>
-
   <div class="product">
     <h3>5. Leather Enzyme Blend</h3>
     <ul>
@@ -301,15 +306,11 @@
 
 <section id="about">
   <h2>Our Story</h2>
-  <!-- No changes here as requested -->
   <p>Our journey began with a shared concern: the undeniable harm that chemical-based fertilizers and pesticides are causing to both human health and the environment. We couldn’t look away from the long-term damage—soil degradation, water contamination, and the growing health risks tied to the food we consume.
 With Lydia’s background in medicine and Melaku’s in biochemistry, we found a natural synergy. Together, we envisioned a more holistic approach—one that protects human well-being, nourishes the earth, and uplifts local communities.
 Ge’ez Bio was born from that vision: a commitment to creating safe, and effective alternatives. We believe that healthy food starts with healthy soil, and that true progress must be rooted in science, sustainability, and a deep respect for life. Our work is not just about replacing chemicals—it’s about restoring balance and dignity to the way we grow, eat, and live.
 </p>
-
-  <p>
-    We are scientists, farmers, engineers, and dreamers. Every product we release is not just a formula—it’s a small piece of a larger mission: to give Ethiopia control over what it grows, builds, and exports. Our journey is just beginning, and we invite you to be part of it.
-  </p>
+  <p>We are scientists, farmers, engineers, and dreamers. Every product we release is not just a formula—it’s a small piece of a larger mission: to give Ethiopia control over what it grows, builds, and exports. Our journey is just beginning, and we invite you to be part of it.</p>
 </section>
 
 <section id="mission">
@@ -346,15 +347,12 @@ Ge’ez Bio was born from that vision: a commitment to creating safe, and effect
 <section id="contact">
   <h2>Contact Us</h2>
   <p>For questions, orders, or collaborations, please use the form below. We'll get back to you within 48 hours.</p>
-
   <h3>What Products Would You Like to See More Of?</h3>
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScVWK2idIwB6fzEMOlSOweikSfn4D5DM6HUMJfeRmXSFt_Hlg/viewform?vc=0&c=0&w=1&flr=0"
           frameborder="0"
           marginheight="0"
           marginwidth="0">Loading…</iframe>
-
   <br/><br/>
-
   <p><strong>Email:</strong> <a href="mailto:info@geezbiotech.com">melaku.garsamo@gmail.com</a></p>
   <p><strong>WhatsApp:</strong> <a href="https://wa.me/2519XXXXXXX" target="_blank">+251 901025304</a></p>
   <p><strong>Location:</strong> Addis Ababa, Ethiopia</p>
