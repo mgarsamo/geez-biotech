@@ -25,17 +25,22 @@
     nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap !important;  /* Prevent wrapping on mobile and desktop */
       gap: 10px;
       margin-top: 10px;
+      overflow-x: auto; /* allow horizontal scroll if needed */
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
     }
     nav a {
+      white-space: nowrap; /* prevent breaking into multiple lines */
+      flex-shrink: 0;
       color: white;
       padding: 8px 12px;
       text-decoration: none;
       font-weight: bold;
       border-radius: 4px;
       transition: background-color 0.3s ease;
+      font-size: 16px; /* keep same font size on all devices */
     }
     nav a:hover, nav a:focus {
       background-color: #00796b;
@@ -101,13 +106,17 @@
     /* Mobile responsive improvements */
     @media (max-width: 768px) {
       nav {
-        gap: 8px;
+        gap: 10px;  /* same gap as desktop */
         padding: 0 10px;
+        flex-wrap: nowrap !important; /* enforce no wrap */
+        overflow-x: auto;
       }
       nav a {
-        padding: 10px 14px;
-        font-size: 14px;
+        padding: 8px 12px; /* same as desktop */
+        font-size: 16px;   /* same as desktop */
       }
+
+      /* Keep all other mobile styles intact */
       section {
         padding: 20px 15px;
         margin: 30px auto;
