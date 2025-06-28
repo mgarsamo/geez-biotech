@@ -1,1 +1,1 @@
-# geez-biotech
+# geez-bio
