@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- Preload logo for faster mobile rendering -->
-  <link rel="preload" href="figure.jpg" as="image">
-
+  
   <!-- Meta description for SEO -->
   <meta name="description" content="Ge'ez Bio | GeezBio | Ge'ezBio - Ethiopia’s leading biotech innovator delivering high-quality enzymes for brewing, textile, and food industries, alongside biofertilizers and eco-friendly biopesticides for sustainable agriculture and green farming. Trusted local producer supporting Ethiopian and East African farmers with natural pest control and enzyme solutions." />
 
@@ -21,6 +18,7 @@
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
+
     header, footer {
       background-color: #004d40;
       color: white;
@@ -28,18 +26,21 @@
       text-align: center;
     }
 
+    header img {
+      max-height: 100px;
+      margin-bottom: 0;
+    }
+
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      flex-wrap: nowrap !important;
       gap: 10px;
       margin-top: 10px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+      padding: 0 15px;
     }
+
     nav a {
-      white-space: nowrap;
-      flex-shrink: 0;
       color: white;
       padding: 8px 12px;
       text-decoration: none;
@@ -48,29 +49,31 @@
       transition: background-color 0.3s ease;
       font-size: 16px;
     }
+
     nav a:hover, nav a:focus {
       background-color: #00796b;
       outline: none;
-      text-decoration: none;
     }
+
     section {
-      padding: 30px 20px;
+      padding: 40px 20px;
       max-width: 900px;
-      margin: 40px auto;
+      margin: 0 auto;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease, transform 0.8s ease;
-      will-change: opacity, transform;
-      min-height: 120px;
     }
+
     section.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     h2 {
       color: #00695c;
       margin-bottom: 20px;
     }
+
     .product {
       background-color: #e0f2f1;
       padding: 15px 20px;
@@ -79,20 +82,21 @@
       border-radius: 5px;
       box-shadow: 0 2px 5px rgb(0 0 0 / 0.05);
     }
+
     .product ul {
       margin: 0;
       padding-left: 20px;
       list-style-type: disc;
     }
+
     iframe {
       width: 100%;
       height: 600px;
       border: none;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-      will-change: transform;
-      min-height: 400px;
     }
+
     details {
       background-color: #e8f5f2;
       border-left: 4px solid #004d40;
@@ -101,42 +105,49 @@
       border-radius: 5px;
       box-shadow: 0 2px 5px rgb(0 0 0 / 0.05);
     }
+
     details summary {
       font-weight: bold;
       cursor: pointer;
-      outline: none;
       font-size: 1.1rem;
       user-select: none;
       padding: 8px 0;
     }
+
     details[open] summary {
       color: #004d40;
     }
+
     footer {
       margin-top: 60px;
     }
 
     @media (max-width: 768px) {
       nav {
-        gap: 10px;
-        padding: 0 10px;
-        flex-wrap: nowrap !important;
+        flex-direction: row;
+        flex-wrap: wrap;
         overflow-x: auto;
+        padding: 0 10px;
       }
+
       nav a {
-        padding: 8px 12px;
-        font-size: 16px;
+        font-size: 14px;
+        padding: 6px 10px;
+        white-space: nowrap;
       }
+
       section {
-        padding: 20px 15px;
-        margin: 30px auto;
+        padding: 30px 15px;
       }
+
       header img {
         max-height: 70px;
       }
+
       .product {
         padding: 12px 15px;
       }
+
       iframe {
         height: 900px;
       }
@@ -196,7 +207,7 @@
   </script>
 
   <script>
-    window.addEventListener("load", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll("section");
       const options = { threshold: 0.1 };
       const observer = new IntersectionObserver((entries, observer) => {
@@ -211,10 +222,11 @@
     });
   </script>
 </head>
+
 <body>
 
 <header>
-  <img src="figure.jpg" alt="Ge'ez Bio" style="max-height: 100px; margin-bottom: 0px;" />
+  <img src="figure.jpg" alt="Ge'ez Bio" />
   <h1>Ge'ez Bio</h1>
   <nav>
     <a href="#home">Home</a>
@@ -238,7 +250,6 @@
 
 <section id="products">
   <h2>Our Products</h2>
-
   <div class="product">
     <h3>1. Alcalase (Protease)</h3>
     <ul>
@@ -247,24 +258,21 @@
       <li><strong>Price:</strong> Starting at $15/kg</li>
     </ul>
   </div>
-
   <div class="product">
     <h3>2. Alpha-Amylase</h3>
     <ul>
-      <li>Enzyme used in breweries, bakeries, and textile starch removal</li>
+      <li>Used in breweries, bakeries, and textile starch removal</li>
       <li>High activity grade</li>
       <li><strong>Price:</strong> Starting at $18/kg</li>
     </ul>
   </div>
-
   <div class="product">
     <h3>3. Azotobacter Biofertilizer</h3>
     <ul>
-      <li>Free-living nitrogen-fixing bacteria that boosts soil fertility without chemicals</li>
+      <li>Free-living nitrogen-fixing bacteria boosting soil fertility without chemicals</li>
       <li><strong>Price:</strong> Starting at $2.50/L</li>
     </ul>
   </div>
-
   <div class="product">
     <h3>4. Bt Biopesticide (Cry1Ac)</h3>
     <ul>
@@ -273,7 +281,6 @@
       <li><strong>Price:</strong> Starting at $25/kg</li>
     </ul>
   </div>
-
   <div class="product">
     <h3>5. Leather Enzyme Blend</h3>
     <ul>
@@ -303,10 +310,7 @@
 With Lydia’s background in medicine and Melaku’s in biochemistry, we found a natural synergy. Together, we envisioned a more holistic approach—one that protects human well-being, nourishes the earth, and uplifts local communities.
 Ge’ez Bio was born from that vision: a commitment to creating safe, and effective alternatives. We believe that healthy food starts with healthy soil, and that true progress must be rooted in science, sustainability, and a deep respect for life. Our work is not just about replacing chemicals—it’s about restoring balance and dignity to the way we grow, eat, and live.
 </p>
-
-  <p>
-    We are scientists, farmers, engineers, and dreamers. Every product we release is not just a formula—it’s a small piece of a larger mission: to give Ethiopia control over what it grows, builds, and exports. Our journey is just beginning, and we invite you to be part of it.
-  </p>
+  <p>We are scientists, farmers, engineers, and dreamers. Every product we release is not just a formula—it’s a small piece of a larger mission: to give Ethiopia control over what it grows, builds, and exports. Our journey is just beginning, and we invite you to be part of it.</p>
 </section>
 
 <section id="mission">
@@ -319,20 +323,16 @@ Ge’ez Bio was born from that vision: a commitment to creating safe, and effect
 
 <section id="partnerships">
   <h2>Partner With Us</h2>
-  <details>  
+  <details>
     <summary>Explore partnership opportunities</summary>
-    <p>
-      We welcome partnerships across the spectrum—from local cooperatives to global organizations. Whether you're looking to distribute, invest, research, or co-create, we’re building something that thrives on collaboration.
-    </p>
+    <p>We welcome partnerships across the spectrum—from local cooperatives to global organizations. Whether you're looking to distribute, invest, research, or co-create, we’re building something that thrives on collaboration.</p>
     <ul>
       <li><strong>Distributors:</strong> Help us reach farmers, tanneries, and breweries.</li>
       <li><strong>Investors:</strong> Seed or grant funding to scale local manufacturing capacity.</li>
       <li><strong>Universities & NGOs:</strong> Research collaborations and technology outreach.</li>
       <li><strong>Farmers & Processors:</strong> Let’s design inputs that work for your crops and workflows.</li>
     </ul>
-    <p>
-      Interested? <a href="#contact">Reach out here</a> or email us directly: <strong>melaku.garsamo@gmail.com</strong>
-    </p>
+    <p>Interested? <a href="#contact">Reach out here</a> or email us directly: <strong>melaku.garsamo@gmail.com</strong></p>
   </details>
 </section>
 
@@ -347,15 +347,12 @@ Ge’ez Bio was born from that vision: a commitment to creating safe, and effect
 <section id="contact">
   <h2>Contact Us</h2>
   <p>For questions, orders, or collaborations, please use the form below. We'll get back to you within 48 hours.</p>
-
   <h3>What Products Would You Like to See More Of?</h3>
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScVWK2idIwB6fzEMOlSOweikSfn4D5DM6HUMJfeRmXSFt_Hlg/viewform?vc=0&c=0&w=1&flr=0"
           frameborder="0"
           marginheight="0"
           marginwidth="0">Loading…</iframe>
-
   <br/><br/>
-
   <p><strong>Email:</strong> <a href="mailto:info@geezbiotech.com">melaku.garsamo@gmail.com</a></p>
   <p><strong>WhatsApp:</strong> <a href="https://wa.me/2519XXXXXXX" target="_blank">+251 901025304</a></p>
   <p><strong>Location:</strong> Addis Ababa, Ethiopia</p>
@@ -363,19 +360,13 @@ Ge’ez Bio was born from that vision: a commitment to creating safe, and effect
 
 <section id="faq">
   <h2>Frequently Asked Questions</h2>
-
   <details>
     <summary>What is Ge'ez Bio?</summary>
-    <p>
-      Ge'ez Bio (also spelled Ge'ezBio, GeezBio, or Geez Bio) is an Ethiopian biotechnology company specializing in the production of enzymes, biofertilizers, and eco-friendly pesticides aimed at sustainable agriculture.
-    </p>
+    <p>Ge'ez Bio (also spelled Ge'ezBio, GeezBio, or Geez Bio) is an Ethiopian biotechnology company specializing in the production of enzymes, biofertilizers, and eco-friendly pesticides aimed at sustainable agriculture.</p>
   </details>
-
   <details>
     <summary>How can I purchase products from Ge'ez Bio?</summary>
-    <p>
-      You can order our products directly through our website or contact us via email at <strong>melaku.garsamo@gmail.com</strong> for inquiries and bulk orders.
-    </p>
+    <p>You can order our products directly through our website or contact us via email at <strong>melaku.garsamo@gmail.com</strong> for inquiries and bulk orders.</p>
   </details>
 </section>
 
