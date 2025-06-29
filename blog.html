@@ -371,7 +371,9 @@
 </footer>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const main = document.querySelector("main");
+    // Fade-in each article
+    const articles = document.querySelectorAll("article");
+
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -380,8 +382,10 @@
         }
       });
     }, { threshold: 0.1 });
-    if (main) observer.observe(main);
 
+    articles.forEach(article => observer.observe(article));
+
+    // Collapsible functionality
     const buttons = document.querySelectorAll(".collapsible-button");
 
     buttons.forEach(button => {
@@ -396,7 +400,6 @@
 
           if (isOpen) {
             content.focus();
-
             setTimeout(() => {
               button.scrollIntoView({ behavior: "smooth", block: "start" });
             }, 300);
@@ -406,6 +409,7 @@
     });
   });
 </script>
+
 
 </body>
 </html>
