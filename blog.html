@@ -370,7 +370,6 @@
 <footer>
   <p>&copy; 2025 Ge'ez Bio. All rights reserved.</p>
 </footer>
-
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const main = document.querySelector("main");
@@ -399,10 +398,9 @@
           if (isOpen) {
             content.focus();
 
-            // Delay scrolling until after expand animation finishes (500ms)
             setTimeout(() => {
-              content.scrollIntoView({ behavior: "smooth", block: "start" });
-            }, 500);
+              button.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 300);
           }
         });
       }
