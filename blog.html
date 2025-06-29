@@ -408,9 +408,28 @@
         });
       }
     });
+
+    // Auto-expand if hash target is inside a collapsible section
+    const hash = window.location.hash;
+    if (hash === "#drip-irrigation") {
+      const dripSection = document.getElementById("drip-irrigation");
+      if (dripSection) {
+        const collapsibleContent = dripSection.closest(".collapsible-content");
+        const toggleButton = document.querySelector(`[aria-controls="${collapsibleContent.id}"]`);
+
+        if (collapsibleContent && toggleButton) {
+          collapsibleContent.classList.add("open");
+          toggleButton.setAttribute("aria-expanded", "true");
+          collapsibleContent.setAttribute("aria-hidden", "false");
+
+          setTimeout(() => {
+            dripSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 300);
+        }
+      }
+    }
   });
 </script>
-
 
 </body>
 </html>
