@@ -9,127 +9,127 @@
 
   <title>Ge'ez Bio News & Updates</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
 
-    header, footer {
-      background-color: #004d40;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+  header, footer {
+    background-color: #800020; /* 🍷 Burgundy */
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
 
-    header img {
-      max-height: 100px;
-      margin-bottom: 0;
-    }
+  header img {
+    max-height: 100px;
+    margin-bottom: 0;
+  }
 
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 0 15px;
+  }
+
+  nav a {
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+  }
+
+  nav a:hover, nav a:focus {
+    background-color: #66001a; /* 🍷 Dark Burgundy Hover */
+    outline: none;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  main.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  article {
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  article h2 {
+    color: #990022; /* 🍷 Burgundy */
+    margin-bottom: 16px;
+  }
+
+  article h3 {
+    color: #800020; /* 🍷 Burgundy */
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  article ul {
+    padding-left: 20px;
+  }
+
+  article ul li {
+    margin-bottom: 8px;
+  }
+
+  article em {
+    color: #555;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    margin-top: 60px;
+  }
+
+  @media (max-width: 768px) {
     nav {
-      display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-      padding: 0 15px;
+      overflow-x: auto;
+      padding: 0 10px;
     }
 
     nav a {
-      color: white;
-      padding: 8px 12px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-      font-size: 16px;
+      font-size: 14px;
+      padding: 6px 10px;
+      white-space: nowrap;
     }
 
-    nav a:hover, nav a:focus {
-      background-color: #00796b;
-      outline: none;
+    header img {
+      max-height: 70px;
     }
 
     main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      margin: 20px 10px;
+      padding: 15px;
     }
-
-    main.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    article {
-      padding: 20px;
-      line-height: 1.6;
-    }
-
-    article h2 {
-      color: #00695c;
-      margin-bottom: 16px;
-    }
-
-    article h3 {
-      color: #00796b;
-      margin-top: 24px;
-      margin-bottom: 12px;
-    }
-
-    article ul {
-      padding-left: 20px;
-    }
-
-    article ul li {
-      margin-bottom: 8px;
-    }
-
-    article em {
-      color: #555;
-      font-size: 0.9rem;
-    }
-
-    footer {
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-        overflow-x: auto;
-        padding: 0 10px;
-      }
-
-      nav a {
-        font-size: 14px;
-        padding: 6px 10px;
-        white-space: nowrap;
-      }
-
-      header img {
-        max-height: 70px;
-      }
-
-      main {
-        margin: 20px 10px;
-        padding: 15px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
